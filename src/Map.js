@@ -10,8 +10,6 @@ export default function Map(props) {
     canvas.width = 355;
     canvas.height = 229;
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
     const middle = {
       x: 177,
       y: 114
