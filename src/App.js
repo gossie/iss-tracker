@@ -10,7 +10,7 @@ export default function App() {
   return (
     <div>
       <IssPosition position={position}></IssPosition>
-      {position.latitude >= 0 && position.longitude >= 0 &&
+      {position &&
         <Map position={position} />
       }
     </div>
@@ -18,7 +18,7 @@ export default function App() {
 }
 
 function usePosition() {
-  const [position, setPosition] = useState({latitude: -1, longitude: -1});
+  const [position, setPosition] = useState(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
