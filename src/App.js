@@ -9,9 +9,11 @@ export default function App() {
 
   return (
     <div>
-      <IssPosition position={position}></IssPosition>
       {position &&
-        <Map position={position} />
+        <React.Fragment>
+          <IssPosition position={position}></IssPosition>
+          <Map position={position} />
+        </React.Fragment>
       }
     </div>
   );
