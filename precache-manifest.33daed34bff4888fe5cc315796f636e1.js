@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6575412cd0b7e867173fea0b8def53f5",
+    "revision": "152747d8123b6889f2e2195d47e962fc",
     "url": "/iss-tracker/index.html"
   },
   {
