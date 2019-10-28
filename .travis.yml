@@ -1,0 +1,18 @@
+dist: trusty
+sudo: required
+language: node_js
+addons:
+  chrome: stable
+node_js:
+  - "node"
+script:
+  - npm run test:unit
+  - npm run build
+deploy:
+    provider: pages
+    skip-cleanup: true
+    github-token: $ISS_TRACKER_GITHUB_TOKEN
+    keep-history: true
+    local-dir: build
+    on:
+        branch: master
