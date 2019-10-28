@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
+import IssPosition from './IssPosition'
+import Map from './Map'
 import './App.css';
 
-function App() {
+export default function App() {
+
+  const position = usePosition();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <IssPosition position={position}></IssPosition>
+      <Map position={position} />
     </div>
   );
 }
 
-export default App;
+function usePosition() {
+  const [position, setPosition] = useState({latitude: 0, longitude: 0});
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetch('http://api.open-notify.org/iss-now.json')
+        .then(response => response.json())
+        .then(json => setPosition({
+          latitude: json.iss_position.latitude,
+          longitude: json.iss_position.longitude,
+          timestamp: json.timestamp
+        }));
+    }, 5000);
+    return () => clearInterval(interval);
+  });
+
+  return position;
+}
