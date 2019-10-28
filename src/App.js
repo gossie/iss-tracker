@@ -20,11 +20,11 @@ function usePosition() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      fetch('http://api.open-notify.org/iss-now.json')
+      fetch('https://api.wheretheiss.at/v1/satellites/25544')
         .then(response => response.json())
         .then(json => setPosition({
-          latitude: json.iss_position.latitude,
-          longitude: json.iss_position.longitude,
+          latitude: json.latitude,
+          longitude: json.longitude,
           timestamp: json.timestamp
         }));
     }, 5000);
