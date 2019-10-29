@@ -20,12 +20,11 @@ export default function Map(props) {
       y: middle.y - (props.position.latitude / 90) * middle.y,
     };
 
-    var background = new Image();
+    const background = new Image();
     background.src = world;
 
     background.onload = () => {
       ctx.drawImage(background,0,0);
-
       ctx.beginPath();
       ctx.arc(current.x, current.y, 7, 0, 2 * Math.PI);
       ctx.fill();
@@ -33,6 +32,10 @@ export default function Map(props) {
   });
 
   return (
-    <canvas id='map' />
+    <div className='tile is-parent'>
+      <div className='tile is-child box'>
+        <canvas id='map' />
+      </div>
+    </div>
   )
 }

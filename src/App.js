@@ -5,7 +5,6 @@ import Splash from './Splash';
 import './App.css';
 
 export default function App() {
-
   const position = usePosition();
   
   return (
@@ -16,23 +15,11 @@ export default function App() {
           {position
             ?
               <React.Fragment>
-                <div className='tile is-parent is-4'>
-                  <div className='tile is-child box'>
-                    <IssPosition position={position}></IssPosition>
-                  </div>
-                </div>
-                <div className='tile is-parent'>
-                  <div className='tile is-child box'>
-                    <Map position={position} />
-                  </div>
-                </div>
+                <IssPosition position={position}></IssPosition>
+                <Map position={position} />
               </React.Fragment>
             :
-              <div className='tile is-parent'>
-                <div className='tile is-child box is-size-2 has-text-centered'>
-                  <Splash />
-                </div>
-              </div>
+              <Splash />
           }
         </div>
       </div>

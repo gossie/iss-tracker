@@ -4,7 +4,11 @@ export default function Splash(props) {
   const seconds = useSeconds();
 
   return (
-    <div>{seconds}</div>
+    <div className='tile is-parent'>
+      <div className='tile is-child box is-size-2 has-text-centered'>
+        <div>{seconds}</div>
+      </div>
+    </div>
   );
 }
 
