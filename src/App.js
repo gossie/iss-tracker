@@ -10,16 +10,30 @@ export default function App() {
   
   return (
     <div>
-      <h1>ISS tracker</h1>
-      {position
-        ?
-          <React.Fragment>
-            <IssPosition position={position}></IssPosition>
-            <Map position={position} />
-          </React.Fragment>
-        :
-          <Splash />
-      }
+      <h1 className='title is-1'>ISS tracker</h1>
+      <div className='tile is-ancestor'>
+        <div className='tile is-parent'>
+          {position
+            ?
+              <React.Fragment>
+                <div className='tile is-parent is-4'>
+                  <div className='tile is-child box'>
+                    <IssPosition position={position}></IssPosition>
+                  </div>
+                </div>
+                <div className='tile is-parent'>
+                  <div className='tile is-child box'>
+                    <Map position={position} />
+                  </div>
+                </div>
+              </React.Fragment>
+            :
+              <div className='tile is-child box is-size-2 has-text-centered'>
+                <Splash />
+              </div>
+          }
+        </div>
+      </div>
     </div>
   );
 }
