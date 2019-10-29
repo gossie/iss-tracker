@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import world from './world.jpg';
+import world from './world.png';
 
 export default function Map(props) {
 
@@ -7,12 +7,12 @@ export default function Map(props) {
     const canvas = document.getElementById('map'),
     ctx = canvas.getContext('2d');
 
-    canvas.width = 355;
-    canvas.height = 229;
+    canvas.width = 350;
+    canvas.height = 180;
 
     const middle = {
-      x: 177,
-      y: 114
+      x: 175,
+      y: 90
     };
 
     const current = {
@@ -27,7 +27,7 @@ export default function Map(props) {
       ctx.drawImage(background,0,0);
 
       ctx.beginPath();
-      ctx.arc(current.x, current.y, 10, 0, 2 * Math.PI);
+      ctx.arc(current.x, current.y, 7, 0, 2 * Math.PI);
       ctx.fill();
     }
   });
