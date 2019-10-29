@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import IssPosition from './IssPosition'
 import Map from './Map'
+import Splash from './Splash';
 import './App.css';
 
 export default function App() {
@@ -10,11 +11,14 @@ export default function App() {
   return (
     <div>
       <h1>ISS tracker</h1>
-      {position &&
-        <React.Fragment>
-          <IssPosition position={position}></IssPosition>
-          <Map position={position} />
-        </React.Fragment>
+      {position
+        ?
+          <React.Fragment>
+            <IssPosition position={position}></IssPosition>
+            <Map position={position} />
+          </React.Fragment>
+        :
+          <Splash />
       }
     </div>
   );
@@ -24,7 +28,7 @@ function usePosition() {
   const [position, setPosition] = useState(null);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const timeout = setTimeout(() => {
       fetch('https://api.wheretheiss.at/v1/satellites/25544')
         .then(response => response.json())
         .then(json => setPosition({
@@ -33,7 +37,7 @@ function usePosition() {
           timestamp: json.timestamp
         }));
     }, 5000);
-    return () => clearInterval(interval);
+    return () => clearTimeout(timeout);
   });
 
   return position;
