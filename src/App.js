@@ -28,8 +28,10 @@ export default function App() {
                 </div>
               </React.Fragment>
             :
-              <div className='tile is-child box is-size-2 has-text-centered'>
-                <Splash />
+              <div className='tile is-parent'>
+                <div className='tile is-child box is-size-2 has-text-centered'>
+                  <Splash />
+                </div>
               </div>
           }
         </div>
