@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c294bf535b7855314a26806e174ab123",
+    "revision": "7796656cd2598c91b0fc8eb12c5e60e6",
     "url": "/iss-tracker/index.html"
   },
   {
-    "revision": "f10b0f369e6e2f3050a9",
+    "revision": "0f9d5e7272298698820b",
     "url": "/iss-tracker/static/css/main.05af2676.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/iss-tracker/static/js/2.e0cb1145.chunk.js"
   },
   {
-    "revision": "f10b0f369e6e2f3050a9",
-    "url": "/iss-tracker/static/js/main.c90e8a4c.chunk.js"
+    "revision": "0f9d5e7272298698820b",
+    "url": "/iss-tracker/static/js/main.05be3789.chunk.js"
   },
   {
     "revision": "2576630af55b88f6a974",
