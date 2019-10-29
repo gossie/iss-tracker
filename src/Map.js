@@ -25,7 +25,10 @@ export default function Map(props) {
 
     background.onload = () => {
       ctx.drawImage(background,0,0);
-      ctx.fillRect(current.x, current.y, 25, 20);
+
+      ctx.beginPath();
+      ctx.arc(current.x, current.y, 10, 0, 2 * Math.PI);
+      ctx.fill();
     }
   });
 
