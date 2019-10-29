@@ -1,11 +1,12 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useRef} from 'react';
 import world from './world.png';
 
 export default function Map(props) {
+  const map = useRef(null);
 
   useEffect(() => {
-    const canvas = document.getElementById('map'),
-    ctx = canvas.getContext('2d');
+    const canvas = map.current;
+    const ctx = canvas.getContext('2d');
 
     canvas.width = 350;
     canvas.height = 180;
@@ -34,7 +35,7 @@ export default function Map(props) {
   return (
     <div className='tile is-parent'>
       <div className='tile is-child box'>
-        <canvas id='map' />
+        <canvas ref={map} />
       </div>
     </div>
   )
