@@ -12,8 +12,8 @@ export default function IssPosition(props) {
         <span>{props.position.longitude}</span>
       </div>
       <div>
-        <span className='label'>Timestamp:</span>
-        <span>{props.position.timestamp}</span>
+        <span className='label'>Zeit:</span>
+        <span>{new Date().toString()}</span>
       </div>
     </React.Fragment>
   );
