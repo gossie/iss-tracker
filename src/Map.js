@@ -12,14 +12,17 @@ export default function Map(props) {
     canvas.height = 180;
 
     const middle = {
-      x: 175,
-      y: 90
+      x: 165,
+      y: 115
     };
 
     const current = {
       x: middle.x + (props.position.longitude / 180) * middle.x,
       y: middle.y - (props.position.latitude / 90) * middle.y,
     };
+
+    current.x = current.x > canvas.width ? canvas.width : current.x;
+    current.y = current.y > canvas.height ? canvas.height : current.y;
 
     const background = new Image();
     background.src = world;
