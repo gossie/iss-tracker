@@ -5,6 +5,7 @@ node_js:
   - "node"
 script:
   - npm run build
+  - npm test
 deploy:
   provider: pages
   skip-cleanup: true
