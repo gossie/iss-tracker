@@ -4,11 +4,11 @@ export default function IssPosition(props) {
   return (
     <div className='tile is-parent is-4'>
       <div className='tile is-child box'>
-        <div>
+        <div id="latitude">
           <span className='label'>Latitude:</span>
           <span>{props.position.latitude}</span>
         </div>
-        <div>
+        <div id="longitude">
           <span className='label'>Longitude:</span>
           <span>{props.position.longitude}</span>
         </div>
