@@ -6,7 +6,7 @@ export default function Splash(props) {
   return (
     <div className='tile is-parent'>
       <div className='tile is-child box is-size-2 has-text-centered'>
-        <div>{seconds}</div>
+        <div>{seconds > 0 ? seconds : "Lift off"}</div>
       </div>
     </div>
   );
